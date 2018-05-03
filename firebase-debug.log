@@ -1,0 +1,241 @@
+[debug] [2018-05-03T04:04:24.840Z] ----------------------------------------------------------------------
+[debug] [2018-05-03T04:04:24.842Z] Command:       /Users/mono/.nodebrew/node/v6.11.5/bin/node /Users/mono/.nodebrew/current/bin/firebase deploy
+[debug] [2018-05-03T04:04:24.842Z] CLI Version:   3.18.4
+[debug] [2018-05-03T04:04:24.842Z] Platform:      darwin
+[debug] [2018-05-03T04:04:24.842Z] Node Version:  v6.11.5
+[debug] [2018-05-03T04:04:24.843Z] Time:          Thu May 03 2018 13:04:24 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:24.843Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-03T04:04:24.852Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-03T04:04:24.852Z] > authorizing via signed-in user
+[debug] [2018-05-03T04:04:24.854Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/monodowndog  
+  
+ Thu May 03 2018 13:04:24 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:25.568Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:25.569Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/monodowndog/tokens  
+  
+ Thu May 03 2018 13:04:25 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:26.239Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'monodowndog'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2018-05-03T04:04:32.048Z] >>> HTTP REQUEST PUT https://monodowndog.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Thu May 03 2018 13:04:32 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:32.806Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database monodowndog is valid
+[debug] [2018-05-03T04:04:32.807Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/monodowndog  
+  
+ Thu May 03 2018 13:04:32 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:33.867Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-05-03T04:04:33.869Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/monodowndog:test  
+ { source: { files: [ [Object] ] } } 
+ Thu May 03 2018 13:04:33 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:35.106Z] <<< HTTP RESPONSE 200
+[info] ✔  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-05-03T04:04:35.108Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/monodowndog:test  
+ { source: { files: [ [Object] ] } } 
+ Thu May 03 2018 13:04:35 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:36.278Z] <<< HTTP RESPONSE 200
+[info] ✔  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-05-03T04:04:36.280Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "~5.12.0",
+    "firebase-functions": "^1.0.1"
+  },
+  "devDependencies": {
+    "tslint": "^5.8.0",
+    "typescript": "^2.5.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-05-03T04:04:36.280Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/monodowndog?view=CONSUMER_VIEW  
+  
+ Thu May 03 2018 13:04:36 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:36.281Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/monodowndog?view=CONSUMER_VIEW  
+  
+ Thu May 03 2018 13:04:36 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:37.485Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:37.520Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-05-03T04:04:37.521Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/monodowndog  
+  
+ Thu May 03 2018 13:04:37 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:38.308Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:38.309Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/763468133617:getServerAppConfig  
+  
+ Thu May 03 2018 13:04:38 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:38.978Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-05-03T04:04:38.980Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/monodowndog/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Thu May 03 2018 13:04:38 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:40.195Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:40.196Z] [rules] created ruleset projects/monodowndog/rulesets/24ed7a5c-416e-47a5-a0e8-408701e89b69
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2018-05-03T04:04:40.197Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/monodowndog/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Thu May 03 2018 13:04:40 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:40.198Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta1/projects/monodowndog/databases/(default)/indexes  
+  
+ Thu May 03 2018 13:04:40 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:41.137Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:41.403Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:41.403Z] [rules] created ruleset projects/monodowndog/rulesets/a20dd784-f4c3-44c2-a312-a695df088ec8
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-05-03T04:04:41.406Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/monodowndog/configs  
+  
+ Thu May 03 2018 13:04:41 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:41.848Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (49.63 KB) for uploading
+[debug] [2018-05-03T04:04:42.111Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/monodowndog/locations/us-central1/functions:generateUploadUrl  
+  
+ Thu May 03 2018 13:04:42 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:42.474Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:42.475Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-e1f9702f-3521-4d17-b9d9-fb968b572fec/b04c286b-2bf6-4302-8ee5-263ee8f80d85.zip?GoogleAccessId=763468133617@cloudservices.gserviceaccount.com&Expires=1525322082&Signature=G42114BDRPKoqgoDNa1J7vf6hf8mK8yvbBUh9rO5jrGeLxB%2BKYibCWQI8Qw9yaUO9ktilparTmv7bBDxxVYQcJpcpSgvFiCO%2BuLuz5TcSrAKlj%2BhHz%2B%2BSKwZnAo%2BgbUhxWJd2vGAtX6ZmhAjGxyO2tHOSFrAECjL72x7RChxmM6mx23QwpDdngHD90nYEPIX3D9TcXgK4UaQc%2FXSd1NRxTmGMQykUA3QA85F9qhCKy0YhPIB66cAKGt2AEhH%2FYWBhzdVkzIyKGIepV%2FGbzDvVveLoAdoX%2FeHlhy%2BOBm1j5zWmqXFX74BxhaRq3eguyyeDORp9o2vkIUxNpB426yo3A%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 50817,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/j5/xv2sctnx7gjbyl94jlcb009h0000gn/T/firebase-functions-51515F9P2ucxaVJCu.zip',
+  fd: 19,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 50817 } 
+ Thu May 03 2018 13:04:42 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:42.975Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2018-05-03T04:04:43.038Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/monodowndog/uploads/-LBZA5CxculEBZCbUEiq?fileCount=5&message=  
+  
+ Thu May 03 2018 13:04:43 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:45.130Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:45.130Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 5 files uploaded successfully
+[debug] [2018-05-03T04:04:46.275Z] [hosting] deploy completed after 3299ms
+[info] i  database: releasing rules...
+[debug] [2018-05-03T04:04:46.447Z] >>> HTTP REQUEST PUT https://monodowndog.firebaseio.com/.settings/rules.json  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Thu May 03 2018 13:04:46 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:47.105Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules for database monodowndog released successfully
+[debug] [2018-05-03T04:04:47.106Z] [rules] releasing firebase.storage/monodowndog.appspot.com with ruleset projects/monodowndog/rulesets/24ed7a5c-416e-47a5-a0e8-408701e89b69
+[debug] [2018-05-03T04:04:47.106Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/monodowndog/releases/firebase.storage/monodowndog.appspot.com  
+ { release: 
+   { name: 'projects/monodowndog/releases/firebase.storage/monodowndog.appspot.com',
+     rulesetName: 'projects/monodowndog/rulesets/24ed7a5c-416e-47a5-a0e8-408701e89b69' } } 
+ Thu May 03 2018 13:04:47 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:48.308Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:48.308Z] [rules] updated release projects/monodowndog/releases/firebase.storage/monodowndog.appspot.com
+[info] ✔  storage: released rules storage.rules to firebase.storage/monodowndog.appspot.com
+[debug] [2018-05-03T04:04:48.308Z] [rules] releasing cloud.firestore with ruleset projects/monodowndog/rulesets/a20dd784-f4c3-44c2-a312-a695df088ec8
+[debug] [2018-05-03T04:04:48.309Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/monodowndog/releases/cloud.firestore  
+ { release: 
+   { name: 'projects/monodowndog/releases/cloud.firestore',
+     rulesetName: 'projects/monodowndog/rulesets/a20dd784-f4c3-44c2-a312-a695df088ec8' } } 
+ Thu May 03 2018 13:04:48 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:49.518Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:49.518Z] [rules] updated release projects/monodowndog/releases/cloud.firestore
+[info] ✔  firestore: released rules firestore.rules to cloud.firestore
+[debug] [2018-05-03T04:04:49.521Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/monodowndog/locations/us-central1/functions  
+  
+ Thu May 03 2018 13:04:49 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:49.862Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function helloWorld...
+[debug] [2018-05-03T04:04:49.865Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2018-05-03T04:04:49.866Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/monodowndog/locations/us-central1/functions/helloWorld 
+query params: {"updateMask":"sourceUploadUrl,name,labels,httpsTrigger"} 
+ { sourceUploadUrl: 'https://storage.googleapis.com/gcf-upload-us-central1-e1f9702f-3521-4d17-b9d9-fb968b572fec/b04c286b-2bf6-4302-8ee5-263ee8f80d85.zip?GoogleAccessId=763468133617@cloudservices.gserviceaccount.com&Expires=1525322082&Signature=G42114BDRPKoqgoDNa1J7vf6hf8mK8yvbBUh9rO5jrGeLxB%2BKYibCWQI8Qw9yaUO9ktilparTmv7bBDxxVYQcJpcpSgvFiCO%2BuLuz5TcSrAKlj%2BhHz%2B%2BSKwZnAo%2BgbUhxWJd2vGAtX6ZmhAjGxyO2tHOSFrAECjL72x7RChxmM6mx23QwpDdngHD90nYEPIX3D9TcXgK4UaQc%2FXSd1NRxTmGMQykUA3QA85F9qhCKy0YhPIB66cAKGt2AEhH%2FYWBhzdVkzIyKGIepV%2FGbzDvVveLoAdoX%2FeHlhy%2BOBm1j5zWmqXFX74BxhaRq3eguyyeDORp9o2vkIUxNpB426yo3A%3D%3D',
+  name: 'projects/monodowndog/locations/us-central1/functions/helloWorld',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  httpsTrigger: {} } 
+ Thu May 03 2018 13:04:49 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:50.287Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:50.289Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/monodowndog/locations/us-central1/functions  
+  
+ Thu May 03 2018 13:04:50 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:50.615Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:50.616Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bW9ub2Rvd25kb2cvdXMtY2VudHJhbDEvaGVsbG9Xb3JsZC9LQ0hCYktEUlhYbw  
+  
+ Thu May 03 2018 13:04:50 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:50.940Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:52.945Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bW9ub2Rvd25kb2cvdXMtY2VudHJhbDEvaGVsbG9Xb3JsZC9LQ0hCYktEUlhYbw  
+  
+ Thu May 03 2018 13:04:52 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:53.277Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:55.279Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bW9ub2Rvd25kb2cvdXMtY2VudHJhbDEvaGVsbG9Xb3JsZC9LQ0hCYktEUlhYbw  
+  
+ Thu May 03 2018 13:04:55 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:55.574Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:57.580Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bW9ub2Rvd25kb2cvdXMtY2VudHJhbDEvaGVsbG9Xb3JsZC9LQ0hCYktEUlhYbw  
+  
+ Thu May 03 2018 13:04:57 GMT+0900 (JST)
+[debug] [2018-05-03T04:04:57.882Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:04:59.886Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bW9ub2Rvd25kb2cvdXMtY2VudHJhbDEvaGVsbG9Xb3JsZC9LQ0hCYktEUlhYbw  
+  
+ Thu May 03 2018 13:04:59 GMT+0900 (JST)
+[debug] [2018-05-03T04:05:00.221Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-03T04:05:02.225Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bW9ub2Rvd25kb2cvdXMtY2VudHJhbDEvaGVsbG9Xb3JsZC9LQ0hCYktEUlhYbw  
+  
+ Thu May 03 2018 13:05:02 GMT+0900 (JST)
+[debug] [2018-05-03T04:05:02.543Z] <<< HTTP RESPONSE 200
